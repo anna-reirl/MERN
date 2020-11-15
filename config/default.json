@@ -1,4 +1,5 @@
 {
   "port": 5000,
+  "jwtSecret": "Anna Agabekyan full-stack",
   "mongoUri": "mongodb+srv://Anna:1234@cluster0.332ie.mongodb.net/app?retryWrites=true&w=majority"
 }
