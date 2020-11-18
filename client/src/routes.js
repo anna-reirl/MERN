@@ -29,7 +29,7 @@ export const userRoutes = isAuthhentical => {
             <Route path="/" exact>
                 <AuthPage />
             </Route>
-            <Redirect to = {"/create"} />
+            <Redirect to = "/" />
         </Switch>
     )
 }
