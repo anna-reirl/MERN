@@ -1,11 +1,19 @@
-import { useState , React }  from 'react'
+import { useState , useEffect, React }  from 'react'
 import {useHttp} from '../hooks/http.hook'
+import { useMessage } from '../hooks/message.hook'
 
 function AuthPage() {
-  const {loading, request} = useHttp()
+  const message = useMessage()
+  const {loading, request, error, clearError} = useHttp()
     const [form, setForm] = useState({
         email: '', password: ''
     })
+
+    useEffect(() => {
+      console.log('Error', error)
+      message(error)
+      // clearError()
+    }, [error, message, clearError])
 
     const changeHandler = event => {
         setForm({ ...form, [event.target.name]:event.target.value })
